@@ -13,7 +13,7 @@ int program_pos = 0;
 
 bool isValidChar(const char& ch)
 {
-    return ch == '[' || ch == ']' || ch == '>' || ch == '<' || ch == '+' || ch == '-' || ch == '.';
+    return ch == '[' || ch == ']' || ch == '>' || ch == '<' || ch == '+' || ch == '-' || ch == '.' || ch == ',';
 }
 
 void read_program()
@@ -94,6 +94,9 @@ void process_program()
         case ']':
             if (memory[pointer] != 0)
                 pos = brackets[pos] - 1;
+            break;
+        case ',':
+            cin >> memory[pointer];
             break;
         default:
             cout << memory[pointer];
